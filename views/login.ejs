@@ -1,14 +1,23 @@
 <%- include ('partials/header') %>
-<div class="row">
+<div class="row"style="width: 500px;
+  height: 420px;
+  background-color: #F5F5F5;
+  position: relative;
+  border-radius: 4px;
+  right: 35%;
+  left: 35%;
+  top: 10%;
+  bottom: 10%">
   <h1 style="text-align: center">Login</h1>
-  <div style="width: 30%; margin: 25px auto">
+  <h4 style="text-align: center">  Sign into your account</h4>
+  <div style="width: 90%; margin: 25px auto">
     <form action="/login" method="post">
       <div class="form-group">
         <input
           class="form-control"
           type="text"
           name="username"
-          placeholder="username"
+          placeholder="Username"
         />
       </div>
       <div class="form-group">
@@ -16,22 +25,21 @@
           class="form-control"
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
         />
       </div>
       <div class="form-group">
-        <button class="btn btn-lg btn-primary btn-block">Login</button>
+        <button class="btn btn-info btn-lg btn-block">Login</button>
       </div>
     </form>
     <div class="form-group text-center">
-      <a href="/forgot" class="btn btn-lg btn-primary">Forgot password?</a>
-      <a href="/verify" style="margin-top: 2%" class="btn btn-lg btn-primary"
-        >Resend Verification Link</a
-      >
-
+      <div>
+        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="/forgot">Forgot password?</a></p>
+        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="/verify">Resend Verification Link</a></p>
+      </div>
       <div class="form-group text-center" style="margin-top: 2%">
-        <a href="/teachers" class="btn btn-lg btn-primary">Go Back</a>
-        <a href="/register" class="btn btn-lg btn-primary">Sign Up</a>
+        <a href="/teachers" class="btn btn-info">Go Back</a>
+        <a href="/register" class="btn btn-info">Sign Up</a>
       </div>
     </div>
   </div>
