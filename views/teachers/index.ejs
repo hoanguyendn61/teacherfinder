@@ -1,14 +1,14 @@
 <%- include ('../partials/header') %>
 <style type="text/css">
-  .vertical-center{
+  .vertical-center {
     border: none;
     background-color: black;
     color: white;
   }
-  .form-control-custom{
-    width: 400px!important;
+  .form-control-custom {
+    width: 400px !important;
   }
-  .thumbnail{
+  .thumbnail {
     background-color: black;
     color: white;
     border-radius: 10px;
@@ -16,20 +16,20 @@
     border: none;
   }
 
-  .thumbnail img{
+  .thumbnail img {
     height: 200px;
     object-fit: cover;
   }
-  .caption{
-    color: white!important;
+  .caption {
+    color: white !important;
   }
   .fa.far.fa-star,
-  .fa.fa-star.checked{
+  .fa.fa-star.checked {
     color: rgb(255, 217, 0);
   }
 </style>
 
-<div class="container ">
+<div class="container">
   <header class="jumbotron vertical-center">
     <div class="container">
       <h1>TEACHER FINDER!</h1>
@@ -50,42 +50,42 @@
             placeholder="Search..."
             class="form-control form-control-custom"
           />
-          <input
-            type="submit"
-            value="Search"
-            class="btn btn-info"
-          />
+          <input type="submit" value="Search" class="btn btn-info" />
         </div>
       </form>
     </div>
   </header>
 
-  <div class="row text-center" style="display: flex; flex-wrap: wrap">
-    <% Teachers.forEach(function(teacher){ %>
-    <div class="col-md-3 col-sm-6">
-      <div class="thumbnail">
-        <img src="<%= teacher.image %>" />
-        <div class="caption">
-          <h4><%= teacher.name %></h4>
-          <% if (teacher.rating === 0) { %>
-          <em>No reviews yet.</em>
-          <% } else { %>
-          <span class="fa fa-star checked"></span>
-          <% if (teacher.rating > 1.5) { %>
-          <span class="fa fa-star checked"></span> <% } %> <% if (teacher.rating
-          > 2.5) { %> <span class="fa fa-star checked"></span> <% } %> <% if
-          (teacher.rating > 3.5) { %>
-          <span class="fa fa-star checked"></span> <% } %> <% if (teacher.rating
-          > 4.5) { %> <span class="fa fa-star checked"></span> <% } %> <% } %>
+  <div style="height: 100%">
+    <div class="row text-center" style="display: flex; flex-wrap: wrap">
+      <% Teachers.forEach(function(teacher){ %>
+      <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+          <img src="<%= teacher.image %>" />
+          <div class="caption">
+            <h4><%= teacher.name %></h4>
+            <% if (teacher.rating === 0) { %>
+            <em>No reviews yet.</em>
+            <% } else { %>
+            <span class="fa fa-star checked"></span>
+            <% if (teacher.rating > 1.5) { %>
+            <span class="fa fa-star checked"></span> <% } %> <% if
+            (teacher.rating > 2.5) { %>
+            <span class="fa fa-star checked"></span> <% } %> <% if
+            (teacher.rating > 3.5) { %>
+            <span class="fa fa-star checked"></span> <% } %> <% if
+            (teacher.rating > 4.5) { %>
+            <span class="fa fa-star checked"></span> <% } %> <% } %>
+          </div>
+          <p>
+            <a href="/teachers/<%= teacher._id %>" class="btn btn-info"
+              ><span class="fa far fa-star"></span> I rate!</a
+            >
+          </p>
         </div>
-        <p>
-          <a href="/teachers/<%= teacher._id %>" class="btn btn-info"
-            ><span class="fa far fa-star"></span> I rate!</a
-          >
-        </p>
       </div>
+      <% }); %>
     </div>
-    <% }); %>
   </div>
 </div>
 <%- include ('../partials/footer') %>

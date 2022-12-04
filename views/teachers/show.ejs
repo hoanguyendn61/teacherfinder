@@ -15,9 +15,12 @@
         <img class="img-responsive" src="<%= Teacher.image %>" />
         <div class="caption-full">
           <h4><a><%=Teacher.name%></a></h4>
-          <p>Phone: <%=Teacher.phone%></p>
-          <p>Email: <%=Teacher.email %></p>
+          <p>Phone: <a href="tel:<%=Teacher.phone%>"><%=Teacher.phone%></a></p>
+          <p>
+            Email: <a href="mailto:<%=Teacher.email %>"><%=Teacher.email %></a>
+          </p>
           <p>Description: <%=Teacher.description%></p>
+          <p>Certificates: <%=Teacher.certs%></p>
           <p>
             <em
               >Added by:
