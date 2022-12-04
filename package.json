@@ -1,11 +1,11 @@
 {
-  "name": "IRMT",
+  "name": "teacher-finder",
   "version": "1.0.0",
   "description": "IRMT v1",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "Walter Henrike",
   "license": "ISC",

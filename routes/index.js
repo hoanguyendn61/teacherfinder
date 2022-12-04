@@ -99,25 +99,36 @@ router.post("/register", function (req, res, next) {
             });
           },
           function (token, user, done) {
+            // const testAccount = await nodemailer.createTestAccount();
             // var smtpTransport = nodemailer.createTransport({
-            //   service: 'Gmail',
+            //   service: "Gmail",
             //   auth: {
-            //     user: 'iratemyteacher@gmail.com',
-            //     pass: process.env.GMAILPW
-            //   }
+            //     user: testAccount.user,
+            //     pass: testAccount.pass,
+            //   },
             // });
             // var mailOptions = {
             //   to: user.email,
-            //   from: 'noreply@iratemyteacher.com',
-            //   subject: 'iRateMyTeacher Account Verification',
-            //   text: 'You are receiving this because you (or someone else) has registered a new account.\n\n' +
-            //     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-            //     'http://' + req.headers.host + '/verified/' + token + '\n\n' +
-            //     'If you did not request this, please ignore this email.\n'
+            //   from: "noreply@teacherfinder.com",
+            //   subject: "Teacher Finder Account Verification",
+            //   text:
+            //     "You are receiving this because you (or someone else) has registered a new account.\n\n" +
+            //     "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
+            //     "http://" +
+            //     req.headers.host +
+            //     "/verified/" +
+            //     token +
+            //     "\n\n" +
+            //     "If you did not request this, please ignore this email.\n",
             // };
-            // smtpTransport.sendMail(mailOptions, function(err) {
-            //   req.flash('success', 'An e-mail has been sent to ' + user.email + ' . Please verify your account before using the system.');
-            //   done(err, 'done');
+            // smtpTransport.sendMail(mailOptions, function (err) {
+            //   req.flash(
+            //     "success",
+            //     "An e-mail has been sent to " +
+            //       user.email +
+            //       " . Please verify your account before using the system."
+            //   );
+            //   done(err, "done");
             // });
             // done(null, "done");
             res.redirect("/login");
