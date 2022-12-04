@@ -1,10 +1,10 @@
 //ALL THE MIDDLEWARE GOES HERE
 
-var Teacher = require("../models/teacher");
-var Comment = require("../models/comment");
-var User = require("../models/user");
-var Review = require("../models/review");
-var middlewareObj = {};
+const Teacher = require("../models/teacher");
+const Comment = require("../models/comment");
+const User = require("../models/user");
+const Review = require("../models/review");
+const middlewareObj = {};
 
 middlewareObj.checkTeacherOwnership = function (req, res, next) {
   if (req.isAuthenticated()) {
@@ -26,7 +26,19 @@ middlewareObj.checkTeacherOwnership = function (req, res, next) {
     });
   }
 };
-
+middlewareObj.checkAdmin = function (req, res, next) {
+  if (req.isAuthenticated()) {
+    if (req.user.isAdmin) {
+      next();
+    } else {
+      req.flash("error", "You don't have permission to do that");
+      res.redirect("back");
+    }
+  } else {
+    req.flash("error", "You need to be logged in to do that");
+    res.redirect("back");
+  }
+};
 middlewareObj.checkCommentOwnership = function (req, res, next) {
   if (req.isAuthenticated()) {
     // if user is logged in
@@ -48,7 +60,7 @@ middlewareObj.checkCommentOwnership = function (req, res, next) {
 };
 
 middlewareObj.isLoggedIn = function (req, res, next) {
-  var identified = false;
+  let identified = false;
   if (req.isAuthenticated()) {
     User.findOne({ username: req.user.username }, function (err, user) {
       if (err) {
@@ -112,7 +124,9 @@ middlewareObj.checkReviewExistence = function (req, res, next) {
           res.redirect("back");
         } else {
           // check if req.user._id exists in foundCampground.reviews
-          var foundUserReview = foundCampground.reviews.some(function (review) {
+          const foundUserReview = foundCampground.reviews.some(function (
+            review
+          ) {
             return review.author.id.equals(req.user._id);
           });
           if (foundUserReview) {

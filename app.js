@@ -1,22 +1,23 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 require("dotenv").config();
-var bodyParser = require("body-parser");
-var mongoose = require("mongoose");
-var Teacher = require("./models/teacher");
-var User = require("./models/user");
-var Comment = require("./models/comment");
-var flash = require("connect-flash");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const Teacher = require("./models/teacher");
+const User = require("./models/user");
+const Comment = require("./models/comment");
+const flash = require("connect-flash");
 
-var seedDB = require("./seeds");
-var passport = require("passport");
-var methodOverride = require("method-override");
-var LocalStrategy = require("passport-local");
+const seedDB = require("./seeds");
+const passport = require("passport");
+const methodOverride = require("method-override");
+const LocalStrategy = require("passport-local");
 
-var commentRoutes = require("./routes/comments");
-var TeacherRoutes = require("./routes/teachers");
-var indexRoutes = require("./routes/index");
-var reviewRoutes = require("./routes/reviews");
+const commentRoutes = require("./routes/comments");
+const TeacherRoutes = require("./routes/teachers");
+const AdminRoutes = require("./routes/admin");
+const indexRoutes = require("./routes/index");
+const reviewRoutes = require("./routes/reviews");
 mongoose.connect(process.env.DATABASE_URL);
 
 // mongoose.connect("mongodb://localhost/27017");
@@ -53,6 +54,7 @@ app.use(function (req, res, next) {
 
 app.use("/", indexRoutes);
 app.use("/teachers", TeacherRoutes);
+app.use("/admin", AdminRoutes);
 app.use("/teachers/:id/comments", commentRoutes);
 app.use("/teachers/:id/reviews", reviewRoutes);
 

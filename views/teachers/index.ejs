@@ -2,7 +2,7 @@
 <style type="text/css">
   .vertical-center {
     border: none;
-    background-image: url('https://i.idol.st/u/background/aTZNH2Background-q70suG.jpg');
+    background-image: url("https://i.idol.st/u/background/aTZNH2Background-q70suG.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: -400px;
@@ -14,11 +14,11 @@
     width: 400px !important;
   }
   .thumbnail {
-    background-color: #FBFBFB;
+    background-color: #fbfbfb;
     color: rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
-    border: 3px solid #5BC0DF;;
+    border: 3px solid #5bc0df;
   }
 
   .thumbnail img {
@@ -32,7 +32,7 @@
   .fa.fa-star.checked {
     color: rgb(255, 217, 0);
   }
-  .black{
+  .black {
     position: absolute;
     background-color: black;
     opacity: 0.3;
@@ -42,12 +42,12 @@
     bottom: 0;
     z-index: 0;
   }
-  .black-over{
+  .black-over {
     position: absolute;
     z-index: 999;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
   }
 </style>
 
@@ -86,7 +86,9 @@
         <div class="thumbnail">
           <img src="<%= teacher.image %>" />
           <div class="caption">
-            <h4><%= teacher.name %></h4>
+            <h4>
+              <a href="/teachers/<%= teacher.id %>"><%= teacher.name %></a>
+            </h4>
             <% if (teacher.rating === 0) { %>
             <em>No reviews yet.</em>
             <% } else { %>
