@@ -7,6 +7,7 @@ var TeacherSchema = new mongoose.Schema({
   image: String,
   imageId: String,
   description: String,
+  certs: [String],
   createdAt: { type: Date, default: Date.now },
   author: {
     id: {
