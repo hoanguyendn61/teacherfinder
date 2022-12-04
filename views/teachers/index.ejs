@@ -2,18 +2,23 @@
 <style type="text/css">
   .vertical-center {
     border: none;
-    background-color: black;
-    color: white;
+    background-image: url('https://i.idol.st/u/background/aTZNH2Background-q70suG.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -400px;
+    color: rgb(255, 255, 255);
+    position: relative;
+    height: 300px;
   }
   .form-control-custom {
     width: 400px !important;
   }
   .thumbnail {
-    background-color: black;
-    color: white;
+    background-color: #FBFBFB;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
-    border: none;
+    border: 3px solid #5BC0DF;;
   }
 
   .thumbnail img {
@@ -21,17 +26,34 @@
     object-fit: cover;
   }
   .caption {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
   }
   .fa.far.fa-star,
   .fa.fa-star.checked {
     color: rgb(255, 217, 0);
   }
+  .black{
+    position: absolute;
+    background-color: black;
+    opacity: 0.3;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  .black-over{
+    position: absolute;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
 </style>
 
 <div class="container">
   <header class="jumbotron vertical-center">
-    <div class="container">
+    <div class="container black-over">
       <h1>TEACHER FINDER!</h1>
       <p>
         Helping students, parents and teachers make informed decisions within
@@ -54,6 +76,7 @@
         </div>
       </form>
     </div>
+    <div class="black"></div>
   </header>
 
   <div style="height: 100%">
