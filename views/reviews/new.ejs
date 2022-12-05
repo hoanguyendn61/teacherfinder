@@ -1,4 +1,9 @@
 <%- include ('../partials/header') %>
+<style type="text/css">
+  .fa.fa-star.checked{
+    color: rgb(244, 218, 47);
+  }
+</style>
 <div class="container">
   <div class="row">
     <h1 style="text-align: center">New Review: <%= teacher.name %></h1>
@@ -75,7 +80,7 @@
           ></textarea>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Submit a Review</button>
+          <button class="btn btn-info btn-block">Submit a Review</button>
         </div>
       </form>
       <a href="/teachers/<%= teacher._id %>">Go Back</a>

@@ -3,7 +3,7 @@
   <h3>List of teachers</h3>
   <div>
     <table class="table table-bordered">
-      <thead>
+      <thead class="thead-dark">
         <tr>
           <th>#</th>
           <th>Name</th>
@@ -23,7 +23,7 @@
           <td><%= teacher.rating ? teacher.rating : 'No reviews yet'%></td>
           <td>
             <a
-              class="btn btn-sm btn-warning"
+              class="btn btn-warning"
               href="/teachers/<%= teacher._id %>/edit"
               >Edit</a
             >
@@ -32,7 +32,7 @@
               action="/teachers/<%= teacher._id %>?_method=DELETE"
               method="POST"
             >
-              <button class="btn btn-sm btn-danger">Delete</button>
+              <button class="btn btn-danger">Delete</button>
             </form>
           </td>
         </tr>
