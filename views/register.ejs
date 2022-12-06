@@ -1,26 +1,20 @@
 <%- include ('partials/header') %>
-<div style="height: 70%">
-  <div
-    class="row"
-    style="
-      width: 500px;
-      height: 560px;
-      background-color: #f5f5f5;
-      position: relative;
-      border-radius: 4px;
-      right: 35%;
-      left: 35%;
-      top: 10%;
-    "
-  >
-    <h1 style="text-align: center">SIGN UP</h1>
-    <div style="width: 90%; margin: 25px auto">
-      <form action="/register" method="POST">
+<div class="row"style="width: 500px;
+  background-color: #F5F5F5;
+  position: relative;
+  border-radius: 4px;
+  right: 35%;
+  left: 35%;
+  margin-bottom: 20px;">
+  <h1 style="text-align: center">SIGN UP</h1>
+  <div style="width: 90%; margin: 25px auto;">
+    <form action="/register" method="POST">
+      <div class="form-group" >
         <div class="form-group">
-          <div class="form-group">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <label>First Name:</label>
-            <input
+        <div class="form-group">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <label>First Name:</label>
+          <input  
               class="form-control"
               type="text"
               name="firstName"
