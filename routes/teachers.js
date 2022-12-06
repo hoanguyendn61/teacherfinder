@@ -174,6 +174,7 @@ router.put(
             teacher.name = req.body.name;
             teacher.phone = req.body.phone;
             teacher.email = req.body.email;
+            teacher.certs = req.body.certs;
             teacher.description = req.body.description;
             teacher.save();
             req.flash("success", "Successfully Updated!");
@@ -184,6 +185,7 @@ router.put(
           teacher.description = req.body.description;
           teacher.phone = req.body.phone;
           teacher.email = req.body.email;
+          teacher.certs = req.body.certs;
           teacher.save();
           req.flash("success", "Successfully Updated!");
           res.redirect("/teachers/" + teacher._id);
